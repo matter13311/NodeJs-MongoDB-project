@@ -1,0 +1,43 @@
+<h3 class="text-center">{{viewTitle}}</h3>
+
+<form action="/recipe" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        {{!-- <label>Full Name</label> --}}
+        <input type="text" class="form-control" name="fullName" placeholder="Cocktail Name"
+            value="{{employee.fullName}}" style="border: 1px solid rgb(63, 63, 63);">
+        <div class="text-danger">
+            {{employee.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        {{!-- <label>Description</label> --}}
+        <input type="text" class="form-control" name="description" placeholder="Cocktail description"
+            value="{{employee.description}}" style="border: 1px solid rgb(63, 63, 63)">
+        <div class="text-danger">
+            {{employee.emailError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            {{!-- <label>Mobile</label> --}}
+            <input type="text" class="form-control" name="alcohol" placeholder="Enter alcohol type"
+                value="{{employee.alcohol}}" style="border: 1px solid rgb(63, 63, 63)">
+
+        </div>
+        <div class="form-group col-md-4">
+            {{!-- <label>City</label> --}}
+            <input type="text" class="form-control" name="imageURL" placeholder="You can enter a image URL"
+                value="{{employee.city}}" style="border-radius: 25px;">
+        </div>
+    </div>
+    <div class="form-group col">
+        {{!-- <label>City</label> --}}
+        {{!-- <input type="text" class="form-control" name="ingredient" placeholder="Enter ingredients used"
+            value="{{employee.city}}" style="height:400px;"> --}}
+        <textarea class="form-control" name="ingredient" placeholder="Enter ingredients" value="{{employee.city}}"
+            style="width:100%; border-radius: 4px; resize:none; height:300px; width:100%;border: 1px solid rgb(63, 63, 63)"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/recipe/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+<h3><a class="btn btn-secondary" href="/recipe"><i class="fa fa-plus"></i> Add new cocktail</a> Cocktail Recipe List
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Description</th>
+            <th class="text-center">Alcohol base</th>
+            <th>Cocktail Ingredients</th>
+            <th>Image</th>
+            {{!-- <img src="https://www.cocktail-db.com/stat/img/300/IcedTeaTini.jpg" alt="alcohol" /> --}}
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td style="width:20%; height: 20px">{{this.fullName}} </td>
+            <td>{{this.description}}</td>
+            <td>{{this.Alcohol}}</td>
+            <td>{{this.ingredients}}</td>
+            <td>
+                <img src='{{this.imageURL}}' alt="alcohol" class="list-image" style="width: 65%; height: auto;" />
+            </td>
+            <td>
+                <a href="/recipe/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/recipe/delete/{{this._id}}"
+                    onclick="return confirm(' Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg"
+                        aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

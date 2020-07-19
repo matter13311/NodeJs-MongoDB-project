@@ -1,0 +1,6 @@
+
+.form-group input:focus{
+    background-color:lightblue;
+    border: 0px solid black;
+}
+
